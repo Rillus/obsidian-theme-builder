@@ -72,42 +72,42 @@ console.log(greet('World'));
 
 *Last updated: January 2024*`;
 
-  const settingsContent = `# Settings
-
-## Appearance
-
-### Theme
-- [x] Dark theme
-- [ ] Light theme
-- [ ] System theme
-
-### Font
-- Font family: Inter
-- Font size: 14px
-- Line height: 1.6
-
-## Editor
-
-### Markdown
-- [x] Auto-pair brackets
-- [x] Auto-pair markdown
-- [ ] Live preview
-
-### Spell check
-- [x] Enable spell check
-- Language: English (US)
-
-## Files & Links
-
-### New file location
-- [x] Same folder as current file
-- [ ] Vault root
-- [ ] Custom folder
-
-### Default view mode
-- [x] Editing
-- [ ] Reading
-- [ ] Source`;
+  // const settingsContent = `# Settings
+  // 
+  // ## Appearance
+  // 
+  // ### Theme
+  // - [x] Dark theme
+  // - [ ] Light theme
+  // - [ ] System theme
+  // 
+  // ### Font
+  // - Font family: Inter
+  // - Font size: 14px
+  // - Line height: 1.6
+  // 
+  // ## Editor
+  // 
+  // ### Markdown
+  // - [x] Auto-pair brackets
+  // - [x] Auto-pair markdown
+  // - [ ] Live preview
+  // 
+  // ### Spell check
+  // - [x] Enable spell check
+  // - Language: English (US)
+  // 
+  // ## Files & Links
+  // 
+  // ### New file location
+  // - [x] Same folder as current file
+  // - [ ] Vault root
+  // - [ ] Custom folder
+  // 
+  // ### Default view mode
+  // - [x] Editing
+  // - [ ] Reading
+  // - [ ] Source`;
 
   const renderContent = () => {
     switch (mode) {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useThemeStore } from '../../store/themeStore';
-import { generateDarkModeColors, generateLightModeColors } from '../../utils/colorUtils';
+import { generateDarkModeColors } from '../../utils/colorUtils';
 import ObsidianHeader from './ObsidianHeader';
 import ObsidianSidebar from './ObsidianSidebar';
 import ObsidianEditor from './ObsidianEditor';
@@ -23,7 +23,7 @@ const ObsidianPreview: React.FC<ObsidianPreviewProps> = ({ previewMode: initialP
     
     // Get colors based on current mode
     const currentColors = isDarkMode 
-      ? generateDarkModeColors(configuration.colors)
+      ? generateDarkModeColors(configuration.colors as unknown as Record<string, string>)
       : configuration.colors;
     
     // Color variables
@@ -39,10 +39,8 @@ const ObsidianPreview: React.FC<ObsidianPreviewProps> = ({ previewMode: initialP
     
     // Typography variables
     styles['--font-family'] = configuration.typography.fontFamily;
-    styles['--font-family-mono'] = configuration.typography.monoFontFamily;
+    styles['--font-family-mono'] = configuration.typography.fontFamilyMono;
     styles['--font-size-base'] = configuration.typography.fontSize;
-    styles['--font-size-small'] = configuration.typography.fontSizeSmall;
-    styles['--font-size-large'] = configuration.typography.fontSizeLarge;
     styles['--font-weight-normal'] = configuration.typography.fontWeight;
     styles['--font-weight-bold'] = configuration.typography.fontWeightBold;
     styles['--line-height'] = configuration.typography.lineHeight;
@@ -51,10 +49,10 @@ const ObsidianPreview: React.FC<ObsidianPreviewProps> = ({ previewMode: initialP
     styles['--sidebar-width'] = configuration.layout.sidebarWidth;
     styles['--header-height'] = configuration.layout.headerHeight;
     styles['--content-padding'] = configuration.layout.contentPadding;
-    styles['--border-radius'] = configuration.layout.borderRadius;
-    styles['--spacing-small'] = configuration.layout.spacingSmall;
-    styles['--spacing-medium'] = configuration.layout.spacingMedium;
-    styles['--spacing-large'] = configuration.layout.spacingLarge;
+    styles['--border-radius'] = configuration.spacing.borderRadius;
+    styles['--spacing-small'] = configuration.spacing.spacing;
+    styles['--spacing-medium'] = configuration.spacing.spacing;
+    styles['--spacing-large'] = configuration.spacing.spacing;
     
     // Component variables
     styles['--button-bg'] = configuration.components.button.backgroundColor;

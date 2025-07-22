@@ -219,6 +219,30 @@
   font-weight: 500;
 }
 
+/* Color Management Styles */
+.palette-section {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.color-controls-section {
+  margin-top: 1.5rem;
+}
+
+.color-controls-section h4 {
+  margin: 0 0 1rem 0;
+  color: #495057;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.color-controls-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
 .control-group input[type="color"] {
   width: 60px;
   height: 40px;
