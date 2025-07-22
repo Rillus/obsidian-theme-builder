@@ -1,0 +1,269 @@
+.markdown-renderer {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
+/* Headings */
+.markdown-h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 2rem 0 1rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e1e4e8;
+  color: #24292e;
+}
+
+.markdown-h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 1.5rem 0 1rem 0;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid #e1e4e8;
+  color: #24292e;
+}
+
+.markdown-h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 1.25rem 0 0.75rem 0;
+  color: #24292e;
+}
+
+.markdown-h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 1rem 0 0.5rem 0;
+  color: #24292e;
+}
+
+.markdown-h5 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0.75rem 0 0.5rem 0;
+  color: #24292e;
+}
+
+.markdown-h6 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0.75rem 0 0.5rem 0;
+  color: #586069;
+}
+
+/* Paragraphs and text */
+.markdown-renderer p {
+  margin: 0 0 1rem 0;
+  line-height: 1.7;
+}
+
+.markdown-renderer strong {
+  font-weight: 600;
+  color: #24292e;
+}
+
+.markdown-renderer em {
+  font-style: italic;
+}
+
+/* Lists */
+.markdown-renderer ul,
+.markdown-renderer ol {
+  margin: 0 0 1rem 0;
+  padding-left: 2rem;
+}
+
+.markdown-renderer li {
+  margin: 0.25rem 0;
+  line-height: 1.6;
+}
+
+.markdown-renderer li > ul,
+.markdown-renderer li > ol {
+  margin: 0.5rem 0;
+}
+
+/* Code blocks */
+.markdown-renderer pre {
+  background-color: #f6f8fa;
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  padding: 1rem;
+  margin: 1rem 0;
+  overflow-x: auto;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+
+.markdown-renderer code {
+  background-color: rgba(27, 31, 35, 0.05);
+  border-radius: 3px;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 0.875rem;
+  padding: 0.2rem 0.4rem;
+  margin: 0 0.2rem;
+}
+
+.markdown-renderer pre code {
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+}
+
+/* Blockquotes */
+.markdown-renderer blockquote {
+  border-left: 4px solid #dfe2e5;
+  color: #6a737d;
+  margin: 1rem 0;
+  padding: 0 1rem;
+  font-style: italic;
+}
+
+.markdown-renderer blockquote p {
+  margin: 0.5rem 0;
+}
+
+/* Tables */
+.markdown-renderer table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  margin: 1rem 0;
+  overflow: auto;
+  display: block;
+}
+
+.markdown-renderer table th,
+.markdown-renderer table td {
+  border: 1px solid #dfe2e5;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+
+.markdown-renderer table th {
+  background-color: #f6f8fa;
+  font-weight: 600;
+  color: #24292e;
+}
+
+.markdown-renderer table tr:nth-child(even) {
+  background-color: #f6f8fa;
+}
+
+/* Links */
+.markdown-renderer a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.markdown-renderer a:hover {
+  text-decoration: underline;
+}
+
+/* Horizontal rules */
+.markdown-renderer hr {
+  border: none;
+  border-top: 1px solid #e1e4e8;
+  margin: 2rem 0;
+}
+
+/* Images */
+.markdown-renderer img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin: 1rem 0;
+}
+
+/* Task lists */
+.markdown-renderer input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+/* Syntax highlighting */
+.markdown-renderer .hljs {
+  background: transparent;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .markdown-h1 {
+    font-size: 2rem;
+  }
+  
+  .markdown-h2 {
+    font-size: 1.75rem;
+  }
+  
+  .markdown-h3 {
+    font-size: 1.5rem;
+  }
+  
+  .markdown-renderer pre {
+    font-size: 0.8rem;
+    padding: 0.75rem;
+  }
+  
+  .markdown-renderer table {
+    font-size: 0.875rem;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .markdown-renderer {
+    color: #e1e4e8;
+  }
+  
+  .markdown-h1,
+  .markdown-h2,
+  .markdown-h3,
+  .markdown-h4,
+  .markdown-h5 {
+    color: #f0f6fc;
+  }
+  
+  .markdown-h6 {
+    color: #8b949e;
+  }
+  
+  .markdown-renderer strong {
+    color: #f0f6fc;
+  }
+  
+  .markdown-renderer pre {
+    background-color: #21262d;
+    border-color: #30363d;
+  }
+  
+  .markdown-renderer code {
+    background-color: rgba(110, 118, 129, 0.4);
+  }
+  
+  .markdown-renderer blockquote {
+    border-left-color: #30363d;
+    color: #8b949e;
+  }
+  
+  .markdown-renderer table th,
+  .markdown-renderer table td {
+    border-color: #30363d;
+  }
+  
+  .markdown-renderer table th {
+    background-color: #21262d;
+    color: #f0f6fc;
+  }
+  
+  .markdown-renderer table tr:nth-child(even) {
+    background-color: #21262d;
+  }
+  
+  .markdown-renderer hr {
+    border-top-color: #30363d;
+  }
+}

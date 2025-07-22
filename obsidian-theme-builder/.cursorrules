@@ -1,0 +1,193 @@
+# Obsidian Theme Builder - Cursor Rules
+
+## Documentation Driven Design (DDD) Principles
+
+### 1. Documentation First Approach
+- **ALWAYS** write documentation before implementing features
+- Every feature must have a corresponding markdown file in the `docs/` directory
+- Documentation should include both usage instructions AND implementation details
+- Follow the established documentation format (Overview → Usage → Examples → Implementation → API Reference)
+
+### 2. Documentation Structure
+- Place all documentation in the `docs/` directory with the following structure:
+  - `docs/README.md` - Main documentation index
+  - `docs/guides/` - User guides and tutorials
+  - `docs/features/` - Feature documentation
+  - `docs/api/` - API reference documentation
+  - `docs/architecture/` - System architecture documentation
+
+### 3. Documentation Format Standards
+Each documentation file must follow this structure:
+```markdown
+# Feature Name
+
+## Overview
+Brief description of what this feature does and why it exists.
+
+## Usage
+Step-by-step instructions for using the feature.
+
+### Examples
+Practical examples with code snippets.
+
+## Implementation
+Technical details about how the feature is implemented.
+
+### Code Structure
+Key components, functions, and their purposes.
+
+### Dependencies
+Required libraries and their roles.
+
+## API Reference
+Detailed API documentation if applicable.
+```
+
+## Code Standards
+
+### 4. TypeScript Requirements
+- Use TypeScript for all new code
+- Define proper interfaces for all data structures
+- Use strict type checking
+- Document complex types with JSDoc comments
+
+### 5. React Component Standards
+- Use functional components with hooks
+- Implement proper prop interfaces
+- Use React.FC type for component definitions
+- Follow the component naming convention: PascalCase
+- Place components in `src/components/` directory
+
+### 6. State Management
+- Use Zustand for global state management
+- Keep state interfaces in `src/types/` directory
+- Use proper TypeScript types for all state
+- Implement proper error handling
+
+### 7. Styling Standards
+- Use CSS modules or styled-components for component-specific styles
+- Follow BEM methodology for CSS class naming
+- Implement responsive design for all components
+- Support both light and dark themes
+- Use CSS custom properties for theming
+
+## Development Workflow
+
+### 8. Feature Development Process
+1. **Document First**: Create/update documentation in `docs/features/`
+2. **Plan Implementation**: Update architecture docs if needed
+3. **Implement Feature**: Write code following established patterns
+4. **Update API Docs**: Ensure API reference is current
+5. **Test Documentation**: Verify all examples work correctly
+
+### 9. Code Organization
+- Keep related files together in feature directories
+- Use index files for clean imports
+- Maintain clear separation between UI components and business logic
+- Follow the established project structure
+
+### 10. Testing Requirements
+- All code examples in documentation must be tested
+- Implement unit tests for utility functions
+- Test components in isolation
+- Ensure accessibility compliance
+
+## Markdown Documentation Standards
+
+### 11. Markdown Formatting
+- Use proper heading hierarchy (H1 → H2 → H3)
+- Include code blocks with language specification
+- Use tables for structured data
+- Include links to related documentation
+- Use emojis sparingly for visual organization
+
+### 12. Code Examples
+- All code examples must be syntactically correct
+- Include comments explaining complex logic
+- Show both input and expected output
+- Use realistic, practical examples
+- Test all code examples before committing
+
+### 13. Documentation Maintenance
+- Update documentation with every code change
+- Keep examples current with actual implementation
+- Remove outdated information promptly
+- Maintain consistent formatting across all docs
+
+## Accessibility and Performance
+
+### 14. Accessibility Requirements
+- All components must be keyboard navigable
+- Implement proper ARIA labels
+- Ensure sufficient color contrast
+- Support screen readers
+- Test with accessibility tools
+
+### 15. Performance Standards
+- Optimize bundle size
+- Implement proper memoization
+- Use lazy loading for large components
+- Minimize re-renders
+- Profile performance regularly
+
+## Git and Version Control
+
+### 16. Commit Standards
+- Use conventional commit messages
+- Reference documentation updates in commits
+- Keep commits focused and atomic
+- Update documentation index when adding new docs
+
+### 17. Branch Naming
+- Use feature branches for new development
+- Follow pattern: `feature/documentation-driven-design`
+- Include documentation updates in feature branches
+
+## Quality Assurance
+
+### 18. Code Review Checklist
+- [ ] Documentation is written before implementation
+- [ ] All examples in documentation are tested
+- [ ] TypeScript types are properly defined
+- [ ] Components follow established patterns
+- [ ] Accessibility requirements are met
+- [ ] Performance considerations are addressed
+
+### 19. Documentation Review
+- [ ] Follows established format
+- [ ] Includes practical examples
+- [ ] Implementation details are accurate
+- [ ] Links to related documentation
+- [ ] No broken links or references
+
+## Enforcement
+
+### 20. Automated Checks
+- ESLint configuration enforces TypeScript standards
+- Prettier maintains consistent formatting
+- Documentation links are validated
+- Code examples are syntax-checked
+
+### 21. Manual Reviews
+- All pull requests require documentation review
+- Implementation must match documented behavior
+- Examples must be tested and verified
+- Architecture changes require documentation updates
+
+## Project-Specific Rules
+
+### 22. Obsidian Theme Builder Specifics
+- All color-related functionality must use chroma-js
+- Theme generation must support both light and dark modes
+- Export functionality must generate valid Obsidian CSS
+- Live preview must update in real-time
+- Color accessibility must be validated
+
+### 23. Documentation Viewer Requirements
+- Markdown files must render properly in the documentation viewer
+- Navigation must work correctly
+- Code highlighting must be functional
+- Links between documentation must work
+- Search functionality must be implemented
+
+Remember: **Documentation is not an afterthought - it's the foundation of our development process.**
