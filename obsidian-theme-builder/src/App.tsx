@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import DocumentationViewer from './components/DocumentationViewer';
+import ThemeBuilder from './components/ThemeBuilder';
 import './App.css';
 
 function App() {
-  const [currentView, setCurrentView] = useState<'docs' | 'app'>('docs');
+  const [currentView, setCurrentView] = useState<'docs' | 'app'>('app');
 
   return (
     <div className="app">
@@ -33,11 +34,7 @@ function App() {
         {currentView === 'docs' ? (
           <DocumentationViewer />
         ) : (
-          <div className="theme-builder-placeholder">
-            <h2>Theme Builder Interface</h2>
-            <p>This is where the main theme builder interface will be implemented.</p>
-            <p>Switch to Documentation view to see the Documentation Driven Design approach in action.</p>
-          </div>
+          <ThemeBuilder />
         )}
       </main>
     </div>
