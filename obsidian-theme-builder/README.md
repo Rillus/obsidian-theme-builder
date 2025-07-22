@@ -1,85 +1,70 @@
 # Obsidian Theme Builder
 
-A modern, documentation-driven theme builder for Obsidian with real-time preview and color palette management.
+A web-based WYSIWYG editor for creating custom Obsidian themes without requiring CSS knowledge. Built with React, TypeScript, and following Documentation Driven Design principles.
 
-## 🚀 Quick Start
+## 🚀 Current Status
 
-```bash
-# Install dependencies
-npm install
+### ✅ Completed Stages
 
-# Start development server
-npm run dev
+#### Stage 1: Foundation & Setup
+- [x] Modern web development environment with React 18 + TypeScript
+- [x] Vite build tool configuration
+- [x] Project structure and folder organization
+- [x] ESLint and formatting setup
+- [x] Basic README and documentation
 
-# Open http://localhost:5173
-```
+#### Stage 2: Obsidian CSS Variable Research & Mapping
+- [x] Complete CSS variable database (400+ variables)
+- [x] Variable categorization by component
+- [x] TypeScript interfaces for theme data
+- [x] CSS variable mapping system
 
-## 📚 Documentation Driven Design
+#### Stage 3: Core Theme Engine ⭐ **JUST COMPLETED**
+- [x] Theme data model with validation
+- [x] CSS generation engine
+- [x] Theme export functionality (manifest.json + theme.css)
+- [x] State management with Zustand
+- [x] Undo/redo functionality
+- [x] File export utilities
+- [x] Complete theme builder interface
+- [x] Color, typography, layout, and component controls
 
-This project follows a **Documentation Driven Design (DDD)** approach, meaning:
+### 🔄 Next Stage: Stage 4 - Preview System
+- [ ] Obsidian UI mockup components
+- [ ] Real-time preview updates
+- [ ] Light/dark mode switching
+- [ ] Responsive preview layouts
 
-- **Documentation First**: All features are documented before implementation
-- **Living Documentation**: Documentation is updated alongside code changes
-- **Usage Examples**: Each feature includes practical usage examples
-- **Implementation Details**: Technical details are included in the same document
+## 🎯 Features
 
-### Viewing Documentation
+### Current Features (Stage 3)
+- **Visual Theme Editor**: Intuitive interface for creating themes
+- **Color Management**: Full color palette customization
+- **Typography Controls**: Font family, size, weight, and spacing
+- **Layout Settings**: Sidebar width, padding, border radius
+- **Component Styling**: Button, input, and modal customization
+- **Real-time Validation**: Instant feedback on theme configuration
+- **Export Options**: Download as files or ZIP, copy CSS to clipboard
+- **Undo/Redo**: Full history management
+- **Theme Import/Export**: Load and save theme configurations
 
-1. Start the development server: `npm run dev`
-2. Open `http://localhost:5173`
-3. Click "📚 Documentation" to view the living documentation
-4. Navigate through features, guides, and API references
+### Planned Features
+- **Live Preview**: Real-time Obsidian interface preview
+- **Advanced Color Tools**: Color harmony, accessibility checking
+- **Font Integration**: Google Fonts and custom font upload
+- **Theme Templates**: Pre-built theme presets
+- **Community Sharing**: Theme marketplace features
 
-## 🎨 Features
+## 🛠️ Technology Stack
 
-- **Color Palette Management**: Create and manage color schemes with harmony generation
-- **Theme Customization**: Visual interface for customizing Obsidian themes
-- **Live Preview**: Real-time preview of theme changes
-- **Export & Import**: Share and backup your themes
-- **Documentation Viewer**: Built-in markdown documentation with navigation
+- **Frontend**: React 18 + TypeScript
+- **Build Tool**: Vite
+- **State Management**: Zustand
+- **Styling**: CSS Modules
+- **File Handling**: JSZip for ZIP exports
+- **Development**: ESLint, Prettier
 
-## 🏗️ Architecture
-
-The project is built with modern web technologies:
-
-- **React 19** with TypeScript for type safety
-- **Zustand** for lightweight state management
-- **Chroma.js** for color manipulation and harmony
-- **React Markdown** for documentation rendering
-- **Vite** for fast development and building
-
-## 📖 Documentation Structure
-
-```
-docs/
-├── README.md              # Main documentation index
-├── guides/               # User and development guides
-│   ├── quick-start.md    # Getting started guide
-│   └── development.md    # Development workflow
-├── features/             # Feature documentation
-│   ├── color-palette.md  # Color management
-│   ├── theme-customization.md
-│   ├── export-import.md
-│   └── live-preview.md
-├── api/                  # API reference
-│   ├── core.md
-│   ├── color-utils.md
-│   └── theme-generation.md
-└── architecture/         # System architecture
-    ├── overview.md
-    ├── components.md
-    ├── state.md
-    └── data-flow.md
-```
-
-## 🛠️ Development
-
-### Prerequisites
-
-- Node.js 18+ 
-- npm or yarn
-
-### Setup
+## 📦 Installation
 
 ```bash
 # Clone the repository
@@ -91,80 +76,111 @@ npm install
 
 # Start development server
 npm run dev
+
+# Build for production
+npm run build
 ```
 
-### Development Workflow
+## 🎨 Usage
 
-1. **Document First**: Write documentation before implementing features
-2. **Follow Standards**: Adhere to the `.cursorrules` guidelines
-3. **Test Examples**: Ensure all documentation examples work
-4. **Update Docs**: Keep documentation in sync with code changes
+1. **Switch to Theme Builder**: Click the "🎨 Theme Builder" button in the header
+2. **Customize Colors**: Use the Colors tab to set your theme's color palette
+3. **Adjust Typography**: Configure fonts, sizes, and weights in the Typography tab
+4. **Modify Layout**: Set spacing, border radius, and component dimensions
+5. **Style Components**: Customize buttons, inputs, and modals
+6. **Export Theme**: Click "Export Theme" to download your theme files
+7. **Install in Obsidian**: Copy the generated files to your Obsidian themes folder
 
-### Available Scripts
+## 📁 Project Structure
+
+```
+src/
+├── components/          # React components
+│   ├── ThemeBuilder.tsx # Main theme builder interface
+│   ├── DocumentationViewer.tsx
+│   └── MarkdownRenderer.tsx
+├── data/               # Static data
+│   └── obsidian-variables.ts # CSS variable mappings
+├── store/              # State management
+│   └── themeStore.ts   # Zustand store
+├── types/              # TypeScript type definitions
+│   ├── theme.ts        # Theme interfaces
+│   └── css-variables.ts
+├── utils/              # Utility functions
+│   ├── themeEngine.ts  # Core theme engine
+│   └── fileExport.ts   # File export utilities
+└── App.tsx             # Main application component
+```
+
+## 🧪 Testing
 
 ```bash
-npm run dev          # Start development server
-npm run build        # Build for production
-npm run lint         # Run ESLint
-npm run preview      # Preview production build
+# Run tests
+npm test
+
+# Run type checking
+npx tsc --noEmit
 ```
 
-## 📝 Documentation Standards
+## 📋 Development Roadmap
 
-Each documentation file follows this format:
+### Stage 4: Preview System (Next)
+- Obsidian interface mockup
+- Real-time preview updates
+- Light/dark mode switching
 
-```markdown
-# Feature Name
+### Stage 5: Color Management System
+- Advanced color picker
+- Color harmony suggestions
+- Accessibility contrast checking
 
-## Overview
-Brief description of what this feature does and why it exists.
+### Stage 6: Typography Management
+- Google Fonts integration
+- Font preview and loading
+- Typography presets
 
-## Usage
-Step-by-step instructions for using the feature.
+### Stage 7: User Interface & Experience
+- Responsive design improvements
+- Keyboard shortcuts
+- Advanced export options
 
-### Examples
-Practical examples with code snippets.
+### Stage 8: Advanced Features
+- Component-specific customization
+- Theme templates and presets
+- Custom CSS injection
 
-## Implementation
-Technical details about how the feature is implemented.
+### Stage 9: Testing & Quality Assurance
+- Comprehensive test suite
+- Cross-browser compatibility
+- Performance optimization
 
-### Code Structure
-Key components, functions, and their purposes.
-
-### Dependencies
-Required libraries and their roles.
-
-## API Reference
-Detailed API documentation if applicable.
-```
+### Stage 10: Documentation & Deployment
+- User documentation
+- Deployment infrastructure
+- Analytics and monitoring
 
 ## 🤝 Contributing
 
-We welcome contributions! Please follow our Documentation Driven Design approach:
+This project follows Documentation Driven Design principles. All features must be documented before implementation.
 
-1. **Read the Development Guide**: Check `docs/guides/development.md`
-2. **Follow .cursorrules**: Adhere to the established coding standards
-3. **Document First**: Write documentation before implementing features
-4. **Test Everything**: Ensure all examples and code work correctly
-
-### Development Rules
-
-- All features must be documented before implementation
-- Documentation must include both usage and implementation details
-- Code examples must be tested and working
-- Follow TypeScript and React best practices
-- Maintain accessibility and performance standards
+1. Read the [Product Requirements Document](PRD_Obsidian_Theme_Builder.md)
+2. Check the current stage and requirements
+3. Create feature documentation first
+4. Implement the feature
+5. Update documentation as needed
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+MIT License - see LICENSE file for details.
 
 ## 🙏 Acknowledgments
 
-- [Obsidian](https://obsidian.md/) for the amazing note-taking app
-- [Chroma.js](https://gka.github.io/chroma.js/) for color manipulation
-- [React Markdown](https://github.com/remarkjs/react-markdown) for documentation rendering
+- Obsidian team for the excellent note-taking app
+- React and TypeScript communities
+- All contributors to the open-source ecosystem
 
 ---
 
-**Remember**: Documentation is not an afterthought - it's the foundation of our development process! 📚✨
+**Current Version**: Stage 3 Complete  
+**Last Updated**: January 2025  
+**Next Milestone**: Stage 4 - Preview System
