@@ -1,0 +1,96 @@
+/* Obsidian Status Bar Component Styles */
+
+.obsidian-status-bar {
+  height: 24px;
+  background: var(--color-surface, #2d2d30);
+  border-top: 1px solid var(--color-border, #3c3c3c);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  font-size: 11px;
+  color: var(--color-text-muted, #8e8e8e);
+  user-select: none;
+}
+
+.status-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.status-center {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.status-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 6px;
+  border-radius: var(--border-radius, 3px);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.status-item:hover {
+  background: var(--color-border, #3c3c3c);
+  color: var(--color-text, #dcddde);
+}
+
+.status-item svg {
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.status-item:hover svg {
+  opacity: 1;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .obsidian-status-bar {
+    padding: 0 8px;
+    font-size: 10px;
+  }
+  
+  .status-left,
+  .status-center,
+  .status-right {
+    gap: 12px;
+  }
+  
+  .status-item {
+    padding: 2px 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .obsidian-status-bar {
+    padding: 0 4px;
+    font-size: 9px;
+  }
+  
+  .status-left,
+  .status-center,
+  .status-right {
+    gap: 8px;
+  }
+  
+  .status-item {
+    padding: 1px 3px;
+  }
+  
+  .status-item svg {
+    width: 10px;
+    height: 10px;
+  }
+}

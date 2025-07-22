@@ -1,0 +1,118 @@
+/* Obsidian Preview Component Styles */
+
+.obsidian-preview {
+  width: 100%;
+  height: 100%;
+  background: var(--color-background, #1e1e1e);
+  color: var(--color-text, #dcddde);
+  font-family: var(--font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  font-size: var(--font-size, 14px);
+  line-height: var(--line-height, 1.5);
+  border-radius: var(--border-radius, 8px);
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 12px var(--color-shadow, rgba(0, 0, 0, 0.3));
+}
+
+.obsidian-window {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-background, #1e1e1e);
+}
+
+.obsidian-main {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.obsidian-content {
+  flex: 1;
+  background: var(--color-surface, #2d2d30);
+  overflow: hidden;
+}
+
+/* Preview mode indicator */
+.preview-mode-indicator {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: var(--color-surface, #2d2d30);
+  border: 1px solid var(--color-border, #3c3c3c);
+  border-radius: var(--border-radius, 4px);
+  padding: 4px 8px;
+  font-size: 12px;
+  color: var(--color-text-muted, #8e8e8e);
+  z-index: 1000;
+}
+
+.mode-label {
+  margin-right: 4px;
+}
+
+.mode-value {
+  font-weight: var(--font-weight-bold, 600);
+  color: var(--color-text, #dcddde);
+  text-transform: capitalize;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .obsidian-preview {
+    border-radius: 0;
+  }
+  
+  .preview-mode-indicator {
+    top: 4px;
+    right: 4px;
+    font-size: 11px;
+    padding: 2px 6px;
+  }
+}
+
+/* Animation for theme changes */
+.obsidian-preview * {
+  transition: 
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Focus states */
+.obsidian-preview *:focus {
+  outline: 2px solid var(--color-accent, #007acc);
+  outline-offset: 2px;
+}
+
+/* Scrollbar styling */
+.obsidian-preview ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.obsidian-preview ::-webkit-scrollbar-track {
+  background: var(--color-background, #1e1e1e);
+}
+
+.obsidian-preview ::-webkit-scrollbar-thumb {
+  background: var(--color-border, #3c3c3c);
+  border-radius: 4px;
+}
+
+.obsidian-preview ::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted, #8e8e8e);
+}
+
+/* Selection styling */
+.obsidian-preview ::selection {
+  background: var(--color-accent, #007acc);
+  color: white;
+}
+
+.obsidian-preview ::-moz-selection {
+  background: var(--color-accent, #007acc);
+  color: white;
+}

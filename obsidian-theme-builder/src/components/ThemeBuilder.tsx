@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useThemeStore } from '../store/themeStore';
 import { exportThemeFiles, exportThemeAsZip, copyToClipboard } from '../utils/fileExport';
+import ObsidianPreview from './preview/ObsidianPreview';
+import PreviewModeSelector from './preview/PreviewModeSelector';
 import './ThemeBuilder.css';
 
 const ThemeBuilder: React.FC = () => {
@@ -21,6 +23,7 @@ const ThemeBuilder: React.FC = () => {
 
   const [activeTab, setActiveTab] = useState<'colors' | 'typography' | 'layout' | 'components'>('colors');
   const [showExportModal, setShowExportModal] = useState(false);
+  const [previewMode, setPreviewMode] = useState<'editor' | 'reading' | 'settings'>('editor');
 
   // Handle configuration updates
   const handleConfigUpdate = (path: string, value: string) => {
@@ -532,13 +535,12 @@ const ThemeBuilder: React.FC = () => {
 
         {/* Right panel - Preview */}
         <div className="preview-panel">
-          <h3>Live Preview</h3>
+          <PreviewModeSelector 
+            mode={previewMode} 
+            onModeChange={setPreviewMode} 
+          />
           <div className="preview-container">
-            <div className="preview-placeholder">
-              <p>Preview will be implemented in Stage 4</p>
-              <p>Current theme configuration:</p>
-              <pre>{JSON.stringify(configuration, null, 2)}</pre>
-            </div>
+            <ObsidianPreview mode={previewMode} />
           </div>
         </div>
       </div>
