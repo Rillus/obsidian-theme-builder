@@ -1,7 +1,7 @@
 // Complete mapping of Obsidian CSS variables
 // Based on analysis of Obsidian's default themes and CSS structure
 
-import { CSSVariable, CSSVariableMap } from '../types/css-variables';
+import type { CSSVariable, CSSVariableMap } from '../types/css-variables';
 
 export const OBSIDIAN_CSS_VARIABLES: CSSVariable[] = [
   // ===== COLORS =====

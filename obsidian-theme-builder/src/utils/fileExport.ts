@@ -1,4 +1,4 @@
-import { ThemeExport } from '../types/theme';
+import type { ThemeExport } from '../types/theme';
 
 /**
  * Download a file with the given content and filename
@@ -21,9 +21,9 @@ export function downloadFile(content: string, filename: string, mimeType: string
 /**
  * Export theme as downloadable files
  */
-export function exportThemeFiles(theme: ThemeExport, themeName: string): void {
-  // Sanitize theme name for filename
-  const sanitizedName = themeName.replace(/[^a-zA-Z0-9-_]/g, '_');
+export function exportThemeFiles(theme: ThemeExport, _themeName: string): void {
+  // Sanitize theme name for filename (unused in this function)
+  // const sanitizedName = themeName.replace(/[^a-zA-Z0-9-_]/g, '_');
   
   // Export manifest.json
   const manifestContent = JSON.stringify(theme.manifest, null, 2);

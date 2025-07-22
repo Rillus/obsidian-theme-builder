@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useThemeStore } from '../store/themeStore';
 import { exportThemeFiles, exportThemeAsZip, copyToClipboard } from '../utils/fileExport';
 import ObsidianPreview from './preview/ObsidianPreview';
+import AdvancedColorPicker from './AdvancedColorPicker';
+import ColorPaletteManager from './ColorPaletteManager';
 import './ThemeBuilder.css';
 
 const ThemeBuilder: React.FC = () => {
@@ -10,7 +12,6 @@ const ThemeBuilder: React.FC = () => {
     validation,
     isExporting,
     exportError,
-    lastSaved,
     history,
     historyIndex,
     updateConfiguration,
@@ -175,126 +176,82 @@ const ThemeBuilder: React.FC = () => {
           <div className="tab-content">
             {activeTab === 'colors' && (
               <div className="colors-tab">
-                <h3>Color Palette</h3>
+                <h3>Color Management</h3>
                 
-                <div className="control-group">
-                  <label>Primary Color</label>
-                  <input
-                    type="color"
-                    value={configuration.colors.primary}
-                    onChange={(e) => handleConfigUpdate('colors.primary', e.target.value)}
-                  />
-                  <input
-                    type="text"
-                    value={configuration.colors.primary}
-                    onChange={(e) => handleConfigUpdate('colors.primary', e.target.value)}
-                    placeholder="#007acc"
-                  />
-                </div>
-
-                <div className="control-group">
-                  <label>Secondary Color</label>
-                  <input
-                    type="color"
-                    value={configuration.colors.secondary}
-                    onChange={(e) => handleConfigUpdate('colors.secondary', e.target.value)}
-                  />
-                  <input
-                    type="text"
-                    value={configuration.colors.secondary}
-                    onChange={(e) => handleConfigUpdate('colors.secondary', e.target.value)}
-                    placeholder="#6c757d"
+                {/* Color Palette Manager */}
+                <div className="palette-section">
+                  <ColorPaletteManager
+                    onPaletteSelect={(colors) => {
+                      // Apply palette colors to theme configuration
+                      const colorMap = {
+                        primary: colors[0] || configuration.colors.primary,
+                        secondary: colors[1] || configuration.colors.secondary,
+                        accent: colors[2] || configuration.colors.accent,
+                        background: colors[3] || configuration.colors.background,
+                        surface: colors[4] || configuration.colors.surface,
+                        text: configuration.colors.text,
+                        textMuted: configuration.colors.textMuted,
+                        border: configuration.colors.border,
+                        shadow: configuration.colors.shadow
+                      };
+                      updateConfiguration({ colors: colorMap });
+                    }}
+                    currentColors={configuration.colors as unknown as Record<string, string>}
                   />
                 </div>
 
-                <div className="control-group">
-                  <label>Accent Color</label>
-                  <input
-                    type="color"
-                    value={configuration.colors.accent}
-                    onChange={(e) => handleConfigUpdate('colors.accent', e.target.value)}
-                  />
-                  <input
-                    type="text"
-                    value={configuration.colors.accent}
-                    onChange={(e) => handleConfigUpdate('colors.accent', e.target.value)}
-                    placeholder="#28a745"
-                  />
-                </div>
+                <div className="color-controls-section">
+                  <h4>Individual Color Controls</h4>
+                  
+                  <div className="color-controls-grid">
+                    <AdvancedColorPicker
+                      value={configuration.colors.primary}
+                      onChange={(color) => handleConfigUpdate('colors.primary', color)}
+                      label="Primary Color"
+                    />
 
-                <div className="control-group">
-                  <label>Background Color</label>
-                  <input
-                    type="color"
-                    value={configuration.colors.background}
-                    onChange={(e) => handleConfigUpdate('colors.background', e.target.value)}
-                  />
-                  <input
-                    type="text"
-                    value={configuration.colors.background}
-                    onChange={(e) => handleConfigUpdate('colors.background', e.target.value)}
-                    placeholder="#ffffff"
-                  />
-                </div>
+                    <AdvancedColorPicker
+                      value={configuration.colors.secondary}
+                      onChange={(color) => handleConfigUpdate('colors.secondary', color)}
+                      label="Secondary Color"
+                    />
 
-                <div className="control-group">
-                  <label>Surface Color</label>
-                  <input
-                    type="color"
-                    value={configuration.colors.surface}
-                    onChange={(e) => handleConfigUpdate('colors.surface', e.target.value)}
-                  />
-                  <input
-                    type="text"
-                    value={configuration.colors.surface}
-                    onChange={(e) => handleConfigUpdate('colors.surface', e.target.value)}
-                    placeholder="#f8f9fa"
-                  />
-                </div>
+                    <AdvancedColorPicker
+                      value={configuration.colors.accent}
+                      onChange={(color) => handleConfigUpdate('colors.accent', color)}
+                      label="Accent Color"
+                    />
 
-                <div className="control-group">
-                  <label>Text Color</label>
-                  <input
-                    type="color"
-                    value={configuration.colors.text}
-                    onChange={(e) => handleConfigUpdate('colors.text', e.target.value)}
-                  />
-                  <input
-                    type="text"
-                    value={configuration.colors.text}
-                    onChange={(e) => handleConfigUpdate('colors.text', e.target.value)}
-                    placeholder="#212529"
-                  />
-                </div>
+                    <AdvancedColorPicker
+                      value={configuration.colors.background}
+                      onChange={(color) => handleConfigUpdate('colors.background', color)}
+                      label="Background Color"
+                    />
 
-                <div className="control-group">
-                  <label>Muted Text Color</label>
-                  <input
-                    type="color"
-                    value={configuration.colors.textMuted}
-                    onChange={(e) => handleConfigUpdate('colors.textMuted', e.target.value)}
-                  />
-                  <input
-                    type="text"
-                    value={configuration.colors.textMuted}
-                    onChange={(e) => handleConfigUpdate('colors.textMuted', e.target.value)}
-                    placeholder="#6c757d"
-                  />
-                </div>
+                    <AdvancedColorPicker
+                      value={configuration.colors.surface}
+                      onChange={(color) => handleConfigUpdate('colors.surface', color)}
+                      label="Surface Color"
+                    />
 
-                <div className="control-group">
-                  <label>Border Color</label>
-                  <input
-                    type="color"
-                    value={configuration.colors.border}
-                    onChange={(e) => handleConfigUpdate('colors.border', e.target.value)}
-                  />
-                  <input
-                    type="text"
-                    value={configuration.colors.border}
-                    onChange={(e) => handleConfigUpdate('colors.border', e.target.value)}
-                    placeholder="#dee2e6"
-                  />
+                    <AdvancedColorPicker
+                      value={configuration.colors.text}
+                      onChange={(color) => handleConfigUpdate('colors.text', color)}
+                      label="Text Color"
+                    />
+
+                    <AdvancedColorPicker
+                      value={configuration.colors.textMuted}
+                      onChange={(color) => handleConfigUpdate('colors.textMuted', color)}
+                      label="Muted Text Color"
+                    />
+
+                    <AdvancedColorPicker
+                      value={configuration.colors.border}
+                      onChange={(color) => handleConfigUpdate('colors.border', color)}
+                      label="Border Color"
+                    />
+                  </div>
                 </div>
               </div>
             )}

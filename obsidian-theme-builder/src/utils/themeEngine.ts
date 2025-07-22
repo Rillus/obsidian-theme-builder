@@ -1,5 +1,4 @@
-import { ThemeConfiguration, ThemeManifest, CSSVariable, ThemeExport } from '../types/theme';
-import { OBSIDIAN_CSS_VARIABLES } from '../data/obsidian-variables';
+import type { ThemeConfiguration, CSSVariable, ThemeExport } from '../types/theme';
 
 export class ThemeEngine {
   private configuration: ThemeConfiguration;
@@ -276,7 +275,7 @@ export class ThemeEngine {
   /**
    * Import theme from files
    */
-  importTheme(manifestContent: string, cssContent: string): void {
+  importTheme(manifestContent: string, _cssContent: string): void {
     try {
       const manifest = JSON.parse(manifestContent);
       
@@ -308,8 +307,8 @@ export class ThemeEngine {
    */
   getPreviewData(): { colors: Record<string, string>; typography: Record<string, string> } {
     return {
-      colors: this.configuration.colors,
-      typography: this.configuration.typography
+      colors: this.configuration.colors as unknown as Record<string, string>,
+      typography: this.configuration.typography as unknown as Record<string, string>
     };
   }
 }

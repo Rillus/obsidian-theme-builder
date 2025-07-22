@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { ThemeConfiguration, ThemeExport } from '../types/theme';
+import type { ThemeConfiguration, ThemeExport } from '../types/theme';
 import { ThemeEngine } from '../utils/themeEngine';
 
 interface ThemeState {
