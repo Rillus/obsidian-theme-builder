@@ -7,14 +7,14 @@
 
 .obsidian-preview {
   flex: 1;
-  background: var(--color-background);
-  color: var(--color-text);
-  font-family: var(--font-family);
-  font-size: var(--font-size-base);
-  line-height: var(--line-height);
+  background: var(--color-background, #ffffff);
+  color: var(--color-text, #213547);
+  font-family: var(--font-family, system-ui, Avenir, Helvetica, Arial, sans-serif);
+  font-size: var(--font-size-base, 14px);
+  line-height: var(--line-height, 1.5);
   overflow: hidden;
-  border-radius: var(--border-radius);
-  box-shadow: 0 4px 12px var(--color-shadow);
+  border-radius: var(--border-radius, 6px);
+  box-shadow: 0 4px 12px var(--color-shadow, rgba(0, 0, 0, 0.1));
 }
 
 .obsidian-window {

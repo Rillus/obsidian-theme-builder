@@ -40,7 +40,7 @@
 
 .status-item:hover {
   background: var(--color-accent);
-  color: white;
+  color: var(--color-text);
 }
 
 .status-icon {

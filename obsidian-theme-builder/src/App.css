@@ -156,3 +156,57 @@
     color: #f0f6fc;
   }
 }
+
+/* Ensure text visibility with fallbacks */
+.text-visible {
+  color: var(--color-text, #213547) !important;
+}
+
+.text-visible-on-light {
+  color: var(--color-text, #213547) !important;
+}
+
+.text-visible-on-dark {
+  color: var(--color-text, #f0f6fc) !important;
+}
+
+/* High contrast text for better accessibility */
+.high-contrast-text {
+  color: var(--color-text, #000000) !important;
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.8);
+}
+
+@media (prefers-color-scheme: dark) {
+  .high-contrast-text {
+    color: var(--color-text, #ffffff) !important;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.8);
+  }
+}
+
+/* Ensure text visibility in preview components */
+.obsidian-preview * {
+  color: var(--color-text, #213547);
+}
+
+.obsidian-preview button,
+.obsidian-preview a,
+.obsidian-preview input,
+.obsidian-preview textarea,
+.obsidian-preview select {
+  color: var(--color-text, #213547) !important;
+}
+
+/* Dark mode overrides for preview */
+@media (prefers-color-scheme: dark) {
+  .obsidian-preview * {
+    color: var(--color-text, #f0f6fc);
+  }
+  
+  .obsidian-preview button,
+  .obsidian-preview a,
+  .obsidian-preview input,
+  .obsidian-preview textarea,
+  .obsidian-preview select {
+    color: var(--color-text, #f0f6fc) !important;
+  }
+}

@@ -49,14 +49,14 @@
 .mode-btn:hover,
 .theme-btn:hover {
   background: var(--color-accent);
-  color: white;
+  color: var(--color-text);
   border-color: var(--color-accent);
 }
 
 .mode-btn.active,
 .theme-btn.active {
   background: var(--color-primary);
-  color: white;
+  color: var(--color-text);
   border-color: var(--color-primary);
 }
 

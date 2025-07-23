@@ -128,7 +128,7 @@
 
 .format-tab.active {
   background: var(--color-primary);
-  color: white;
+  color: var(--color-text);
   border-color: var(--color-primary);
 }
 
